@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.43814d23.chunk.css",
+    "main.js": "/static/js/main.a72ef59c.chunk.js",
+    "main.js.map": "/static/js/main.a72ef59c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b308652b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b308652b.js.map",
+    "static/js/2.8d736d1f.chunk.js": "/static/js/2.8d736d1f.chunk.js",
+    "static/js/2.8d736d1f.chunk.js.map": "/static/js/2.8d736d1f.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.43814d23.chunk.css.map": "/static/css/main.43814d23.chunk.css.map",
+    "static/js/2.8d736d1f.chunk.js.LICENSE.txt": "/static/js/2.8d736d1f.chunk.js.LICENSE.txt",
+    "static/media/axon2.326f4bbd.jpg": "/static/media/axon2.326f4bbd.jpg",
+    "static/media/educaverse_logo.06b4f781.png": "/static/media/educaverse_logo.06b4f781.png",
+    "static/media/land-1x1.68aa7a0b.jpg": "/static/media/land-1x1.68aa7a0b.jpg",
+    "static/media/land-2x2.5e31232b.jpg": "/static/media/land-2x2.5e31232b.jpg",
+    "static/media/land-3x3.9a4e5cbd.jpg": "/static/media/land-3x3.9a4e5cbd.jpg",
+    "static/media/land-6x6.96ba03d4.jpg": "/static/media/land-6x6.96ba03d4.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b308652b.js",
+    "static/js/2.8d736d1f.chunk.js",
+    "static/css/main.43814d23.chunk.css",
+    "static/js/main.a72ef59c.chunk.js"
+  ]
+}
