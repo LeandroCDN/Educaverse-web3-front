@@ -1,0 +1,218 @@
+.column {
+  position: flex;
+  left: 0%;   
+  min-width: 400px;
+  min-height: 500px;
+  /* height: px; */
+  max-height: 100vh;
+  /* background: rgb(87, 90, 106);   */
+  /* width: 50%; */
+  display: flex; 
+  text-align: center;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+} 
+
+.axonImg{  
+  min-height: 200px; 
+  max-height: 500px; 
+  margin-bottom: 15%;
+  margin-right: 15%;
+}
+.buyBox{
+  /* position: relative;
+  left: 5vw;
+  margin-top: 30px; 
+  margin-right:100px; 
+  max-height: 15%;  
+  max-width: 50vw;  
+  max-height: 75vh;
+  border-radius: 20px;  
+  */
+  
+  color: rgba(255, 255, 255, 0.348);
+  font-size: 20px;
+  display: flex;
+  align-items: center;  
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+}
+
+.ContextFormBox{
+  /* background: rgba(255, 255, 255, 0.137); */
+  background: linear-gradient(rgba(255, 255, 255, 0.1), #3534527b);
+  position: relative;
+  margin-top: 15px; 
+  padding-top: 25px;
+  padding-bottom: 25px;
+  /* max-width: 40%; */
+  /* width: 800px; */
+  min-width: 300px;
+  /* min-height: 400px; */
+  /* max-height: 20%; */
+  border-radius: 20px;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 1);
+  color: rgb(255, 255, 255);
+}
+
+/* .buyForm{
+  text-align: center;
+  margin: 5px;
+  
+}
+
+.inputForm{  
+  width: 20%;  
+  margin: 0px;
+} */
+
+.h1Form{
+  color:rgba(255, 255, 255, 1);
+  font-size: 60px;
+  margin: 0;
+  padding: 0px;
+}
+
+.pbuyForm{
+  /* width: 400px; */
+}
+
+.buy-video{
+  min-width: 100vw;  
+}
+@media (max-width: 600px) {
+  .buy-video{
+    display: none;  
+  }
+}
+/*
+.abajo{
+  /*
+  min-height: 85vh;
+  min-width: 100vw;
+  max-height: 100vh;
+  position: absolute;
+  top: 80%; 
+  margin: 0;
+  padding: 0;
+  overflow: hidden; 
+  
+}
+
+
+.margin {
+  position: relative;
+  min-width: 100%;
+  /*
+  overflow: hidden;
+  min-height: 85vh;
+  max-height: 90vh; 
+}
+
+
+.main{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 78vh;
+  overflow: hidden;
+}
+.video {
+  width: 200%;
+  height: 110vh;
+  object-fit: cover;
+  position: relative;
+  top: -17%;
+  left: -50%
+}
+
+.content {
+  background-color:rgba(250, 246, 246, 0.077);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.h2Video {
+  color: red;
+  position: relative;
+  top:-12%;
+  margin: 1px;
+  /* padding-bottom: 15px; 
+  max-width: 70%;
+  font-weight:500;
+  font-size: 500%;
+  text-align: center;
+  
+}
+.videoBar{
+  margin: 25px;
+  /* padding: 0; 
+  position: relative;
+  top:-12%;
+  text-align: center;
+  font-size: 120%;
+  max-width: 55%;
+
+}
+
+.videoText{
+  margin: 10px;
+  /* padding: 0; 
+  position: relative;
+  top:-12%;
+  text-align: center;
+  font-size: 120%;
+  max-width: 55%;
+}
+.buttonDowload{
+  position: relative;
+  min-width: 200px;
+  min-height: 50px;
+  font-size: 20px;
+  background-color: rgba(35, 34, 52, 1);
+  border: none;
+  border-radius: 5px;
+  color:white;
+  cursor:pointer;
+}
+
+.overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.40);
+}
+
+.fotter{
+  position: relative;
+  background-color: rgb(35 34 52);
+  top: 75vh;
+  width: 100%; 
+  height: 100px;
+}
+
+.contentFooter{
+  /* color: #44551; 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(151, 151, 151);
+}
+
+*/
+
+

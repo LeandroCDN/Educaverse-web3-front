@@ -1,0 +1,284 @@
+
+.tittle{
+  width: 100%;
+  background-color: red;
+  /* border: 2px solid rgb(0, 0, 0); */
+  display: block;
+  position: relative;  
+  overflow: hidden;
+  height: 950px;
+  min-height: 700px;
+  max-height: 80vh;
+}
+.tittle-video{
+  min-height: 700px;
+}
+.tittle-text-section, .tittle-h1, .tittle-span, .tittle-p, .tittle-span {
+  z-index: 1;  
+  color: white;
+  position: relative;
+  top: 0px;
+  margin:0px;  
+  
+}
+.tittle-text-section {
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+  font-size: 200%;  
+  height: 0;
+  
+}
+.tittle-h1{
+  font-size: 90px;
+  margin: 0px;
+  padding: 0px;
+  top: 3vh;
+  width: 75vw;
+  /* font-family: "Paytone One"; */
+  font-weight: bold;
+}
+.tittle-p{
+  position: relative;
+  font-size: 20px;
+  /* font-family: "Open Sans"; */
+  padding: 2%; 
+}
+.p1{
+  position: relative;
+  color: #8DCAEC;
+  top: 5px;
+}
+.p2 {
+  position: relative;
+  color: #ccccccc4;
+  top: 15%;
+}
+p {
+  margin: inherit;
+}
+.home-video-div{
+  position: relative;
+  padding: 10px; 
+  
+  
+}
+.home-video-img{
+  width: 85%; 
+  position: relative;
+  /* top: 3vw; */
+  left: 0px;
+}
+
+
+.lands{
+  width: 100%;
+  /* height: 500px; */
+  padding-bottom: 15px;
+  /* background-color: rgb(237, 155, 155); */
+  border: 2px solid rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
+.OpenSea-img {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.lands-resume {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+
+}
+.OpenSea-div{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+
+}
+
+.lands-imgs-section{
+  /* width: 90%; */
+  /* max-width: 275px; */
+  border: 2px;
+  border: 3px solid rgb(11, 27, 255);
+  display: flex;
+  align-items: center;
+  align-content: center;
+  /* flex-wrap: wrap; */
+  /* flex-direction: column; */
+}
+.lands-img-section{  
+  width: 99%;
+  padding: 1px;
+  /* max-width: 275px; */
+  /* margin: 2%;
+  padding: 2px; */
+  /* border: 2px; */
+  /* border: 2px solid rgb(255, 255, 255); */
+}
+
+.land-img-one,.land-img-Two,.land-img-Tree,.land-img-Six {
+  width: 100%;
+  max-width: 275px;
+}
+
+
+
+
+.features{
+  width: 100%;
+  /* height: 500px; */
+  padding: 15px;
+  background-color: rgba(77, 184, 47, 0.645);
+  border: 2px solid rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-image: url('https://content.app-sources.com/s/49401586197528073/uploads/Logotipos/tarjeta2-8571866.jpg');
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.feature{
+  position: relative;  
+  margin: 1%;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 50px ;
+  min-height: 782px;
+  width: 352px;
+  max-width: 352px; 
+  /* background-color: rgba(27, 86, 151, 1); */
+  background-image: linear-gradient(27deg, rgba(135, 0, 156, 1) 0%, rgba(0, 143, 222, 1) 100%);
+}
+
+.team-section{
+  width: 100vw;
+  /* height: 500px; */
+  /* background-color: rgb(221, 29, 179); */
+  border: 2px solid rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-text-area{
+  width: 100vw;
+  height: auto;
+  /* background-color: rgb(71, 29, 221); */
+  border: 2px solid rgb(255, 255, 255);
+}
+
+.teams{
+  width:80%;
+  /* height: 500px; */
+  padding: 15px;
+  /* margin: ; */
+
+  /* background-color: rgba(77, 184, 47, 0.645); */
+  border: 2px solid rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.top-teams{
+  display: flex;
+  flex-direction: row;
+}
+.team {
+  /* display: flex; */
+  max-width: 308px;
+  min-width: 180px;
+  margin: 2px;
+  padding: 2px;
+}
+
+.img-position{
+  width: 100%;
+  height: 35vh; 
+  /* height: 350px; */
+  
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  
+  
+}
+.team-img{
+  width: 100%;
+  height: 100%; 
+  position: relative;
+  left: 25%;
+  top: 0%;
+  background-image: url('https://content.app-sources.com/s/49401586197528073/uploads/equipo/educaverse_Team2-2107823.png');
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+
+
+
+/* .section{
+  width: 100%;
+  height: 500px;
+  background-color: rgb(211, 226, 129);
+  border: 2px solid rgb(255, 255, 255);
+} */
+
+
+@media (max-width: 800px) {
+  .tittle-h1{
+    font-size: 60px;   
+  }
+  .p1 {
+    position: relative;
+    top: 20px;
+  }
+
+  .p2 {
+    position: relative;
+    color: #ccccccc4;
+    top: 75px;
+  }
+  .home-video-div{
+    position: relative;
+    top: 180px;
+    height: 400px;
+    width: auto;  
+  }  
+}
+@media (max-width: 400px) {
+  .tittle-h1{
+    font-size: 48px;
+    width: 100vw;   
+    padding-bottom:5%;    
+  }
+  .p1 {
+    position: relative;
+    top: 10px;
+  }
+
+  .p2 {
+    position: relative;
+    color: #ccccccc4;
+    top: 55px;
+  }
+  .home-video-div{
+    position: relative;
+    top: 120px;
+    height: 400px;
+    width: auto;  
+  }
+}

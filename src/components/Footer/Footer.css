@@ -1,0 +1,22 @@
+.Footer {
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(35 34 52);
+  color: white;
+  z-index: 10; 
+}
+
+.line{
+  position: relative;
+  top: -15%;
+  margin: 0;
+  padding: 0;
+  height: 1px;
+  width: 79%;
+  background-color: #444444;
+  /* border: 1px; */
+}
