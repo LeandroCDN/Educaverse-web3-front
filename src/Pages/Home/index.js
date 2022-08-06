@@ -6,11 +6,14 @@ import landOne from "../../media/img/land-1x1.jpg";
 import landTwo from "../../media/img/land-2x2.jpg";
 import landTree from "../../media/img/land-3x3.jpg";
 import landSix from "../../media/img/land-6x6.jpg";
+import featureone from "../../media/img/feature-one.png";
+import featuretwo from "../../media/img/feature-two.png";
+import featuretree from "../../media/img/feature-tree.png";
 
 
 export default function Home() {
   return (
-    <>      
+    <div className="pagestyle">      
       <div className="tittle">
         <div className="tittle-text-section">
           <h1 className="tittle-h1">
@@ -39,18 +42,27 @@ export default function Home() {
       <div className="lands">        
         <div className="lands-resume">
           <div className="OpenSea-div">          
-              <img src="https://content.app-sources.com/s/49401586197528073/uploads/Logotipos/31df0e9-OpenSea-Logo-White-8570739.svg" className="OpenSea-img" />
-              <button>HOLA</button>
+              <img 
+                src="https://content.app-sources.com/s/49401586197528073/uploads/Logotipos/31df0e9-OpenSea-Logo-White-8570739.svg" 
+                className="OpenSea-img" />
+              <a  
+                href="https://opensea.io/collection/educaverse-lands-presale-voucher" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="landsButton"
+              >
+                View on OpenSea
+              </a>
           </div>
           <h2 className="lands-h2">
             <span className="lands-span">
-              EDUCATIONAL <br/> METAVERSE
+              SALES PRIVATE LANDS
             </span>
           </h2>
-          <div>
-            <span>1st WAVE</span>
-            <span>2000 Lands on</span>
-            <span>Ethereum</span>
+          <div className="land-cant">
+            <span className="blue-span-lands">1st WAVE | </span>
+            <span >2000 Lands on </span>
+            <span className="blue-span-lands">Ethereum</span>
           </div>
         </div>
 
@@ -79,7 +91,7 @@ export default function Home() {
           </div>
           <div className="lands-img-section">
             <div className="lands-img">
-            <img src={landTree} className="land-img-Tree" />
+              <img src={landTree} className="land-img-Tree" />
             </div>
             <div className="lands-ratio">
               <h3> 1 X 1</h3>
@@ -103,76 +115,153 @@ export default function Home() {
 
       </div>
 
+      
       <div className="features">
-        <div className="feature">
-          <h2>HOLA</h2>
-          <p> dale loco</p>
+      <div className="features-overlay">
+          <div className="feature f-one">
+            <h2>CUSTOMISE <br/>YOUR AVATAR</h2>
+            <div className="feature-img">
+              <img src={featureone} className="land-img-one" />
+            </div>
+            <p> 
+              Users can customize their own avatar with plug-ins created in 
+              Educaverse and can import their own avatars and plug-ins from external partners, 
+              such as Ready Player Me.
+            </p>
+            <a  
+              href="https://content.app-sources.com/s/49401586197528073/uploads/pdf/WP_VentaPrivada-Educaverse-2_-2717250.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="feature-button"
+            >
+              MORE DETAILS
+            </a>
+          </div>
+          <div className="feature f-two">
+            <h2>LEARN TO <br/>EARN</h2>
+            <div className="feature-img">
+              <img src={featuretwo} className="land-img-one" />
+            </div>
+            
+            <p> 
+              Imagine a place where students can get certified and get 
+              benefits thanks to our incredible tokenization system.
+            </p>
+            <a  
+              href="https://content.app-sources.com/s/49401586197528073/uploads/pdf/WP_VentaPrivada-Educaverse-2_-2717250.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="feature-button"
+            >
+              MORE DETAILS
+            </a>
+          </div>
+          <div className="feature f-tree">
+            <h2>EDUCATIONAL <br/>CONTENT</h2>
+            <div className="features-img">
+              <img src={featuretree} className="land-img-one" />
+            </div>
+            <p>
+              ducaverse makes educational content more accessible from anywhere in the world, 
+              using a cell phone, tablet, computer or virtual reality devices. 
+            </p>
+            <a  
+              href="https://content.app-sources.com/s/49401586197528073/uploads/pdf/WP_VentaPrivada-Educaverse-2_-2717250.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="feature-button"
+            >
+              MORE DETAILS
+            </a>
+          </div>
         </div>
-        <div className="feature">
-          <h2>HOLA</h2>
-          <p> dale loco</p>
-        </div>
-        <div className="feature">
-          <h2>HOLA</h2>
-          <p> dale loco</p>
-        </div>
-
       </div>
+     
 
       <div className="team-section">
         <div className="home-text-area">
           <h2>Educaverse Team</h2>
-          <p><span>We are building the educational metaverse with the best team of people and professionals.</span></p>
+          <p><span>We are building the educational metaverse<br/> with the best team of people and professionals.</span></p>
         </div> 
 
         <div className="teams">
-          <div className="top-teams">
-            <div className="team">
-              <div className="lands-img">
-                <img src={landSix} className="land-img-Six" />
+          <div className="group-teams">
+            <div className="team t1">
+              <div className="team-overlay">
+                <h3> JOSE</h3>
+                <p><span>Metaverse Urban Architect</span></p>
+                <div>
+                  <button>HOLA</button>
+                  <button>HOLA</button>
+                  <button>HOLA</button>
+                </div>
               </div>
-              <h3> JOSE</h3>
             </div>
-            <div className="team">
-              <div className="lands-img">
-                <img src={landSix} className="land-img-Six" />
-              </div>
-              <h3> JOSE</h3>
+            <div className="team t2">
+              <div className="team-overlay">
+                <h3> JOSE</h3>
+                <p><span>Metaverse Urban Architect</span></p>
+                <div>
+                  <button>IN</button>
+                  <button>Twitter</button>
+                  <button>Educa</button>
+                </div>
+              </div>              
             </div>
-            <div className="team">
-              <div className="lands-img">
-                <img src={landSix} className="land-img-Six" />
+            <div className="team t3">
+              <div className="team-overlay">
+                <h3> JOSE</h3>
+                <p><span>Metaverse Urban Architect</span></p>
+                <div>
+                  <button>HOLA</button>
+                  <button>HOLA</button>
+                  <button>HOLA</button>
+                </div>
               </div>
-              <h3> JOSE</h3>
             </div>
           </div>
-          <div className="top-teams">
-            <div className="team">
-              <div className="lands-img">
-                <img src={landSix} className="land-img-Six" />
+          <div className="group-teams">
+            <div className="team t4">
+              <div className="team-overlay">
+                <h3> JOSE</h3>
+                <p><span>Metaverse Urban Architect</span></p>
+                <div>
+                  <button>HOLA</button>
+                  <button>HOLA</button>
+                  <button>HOLA</button>
+                </div>
               </div>
-              <h3> JOSE</h3>
-            </div>  
-            <div className="team">
-              <div className="lands-img">
-                <img src={landSix} className="land-img-Six" />
-              </div>
-              <h3> JOSE</h3>
             </div>
-            <div className="team">
-              <div className="lands-img">
-                <img src={landSix} className="land-img-Six" />
-              </div>
-              <h3> JOSE</h3>
+            <div className="team t5">
+              <div className="team-overlay">
+                <h3> JOSE</h3>
+                <p><span>Metaverse Urban Architect</span></p>
+                <div>
+                  <button>IN</button>
+                  <button>Twitter</button>
+                  <button>Educa</button>
+                </div>
+              </div>              
             </div>
-          </div>       
+            <div className="team t6">
+              <div className="team-overlay">
+                <h3> JOSE</h3>
+                <p><span>Metaverse Urban Architect</span></p>
+                <div>
+                  <button>HOLA</button>
+                  <button>HOLA</button>
+                  <button>HOLA</button>
+                </div>
+              </div>
+            </div>
+          </div>      
         </div>
         <div className="img-position">
           <div className="team-img"></div>
         </div>
         <div></div>
       </div>
-    </>
+    </div>
   );
 }
 // style="text-align: center; line-height: 1;"

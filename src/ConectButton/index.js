@@ -120,3 +120,8 @@ const ConectButton = () => {
 }
 
 export  { ConectButton };
+
+//NEW TAB 
+/*
+https://bobbyhadz.com/blog/react-open-link-in-new-tab#:~:text=To%20open%20a%20link%20in,loaded%20into%20a%20new%20tab.
+*/
