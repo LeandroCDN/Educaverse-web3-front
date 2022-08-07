@@ -1,5 +1,5 @@
 .Navbar {
-  height: 60px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,7 +10,7 @@
 
 .Navbar > .nav-logo {
   font-weight: 700;
-  font-size: 21px;
+  font-size: 26px;
   margin: 15px;
   color: #ffffff;
   z-index: 10; 
@@ -18,7 +18,8 @@
 
 .Navbar > .nav-items > a {
   color: #ffffff;
-  font-size: 16px;
+  font-size: 22px;
+  font-weight: 400;
   text-decoration: none;
   margin: 15px;
   position: relative;

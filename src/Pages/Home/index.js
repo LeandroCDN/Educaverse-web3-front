@@ -9,6 +9,9 @@ import landSix from "../../media/img/land-6x6.jpg";
 import featureone from "../../media/img/feature-one.png";
 import featuretwo from "../../media/img/feature-two.png";
 import featuretree from "../../media/img/feature-tree.png";
+import socialTw from "../../media/media-icons/twitter.png";
+import socialLn from "../../media/media-icons/linkedin.png";
+import socialst from "../../media/media-icons/spotify.png";
 
 
 export default function Home() {
@@ -67,7 +70,7 @@ export default function Home() {
         </div>
 
         <div className="lands-imgs-section">
-          <div className="lands-img-section">
+          <div className="lands-img-section img-one">
             <div className="lands-img">
               <img src={landOne} className="land-img-one" />
             </div>
@@ -188,34 +191,71 @@ export default function Home() {
           <div className="group-teams">
             <div className="team t1">
               <div className="team-overlay">
-                <h3> JOSE</h3>
+                <h3> José Pico</h3>
+                {/* <a href="https://www.flaticon.com/free-icons/twitter" title="twitter icons">Twitter icons created by Freepik - Flaticon</a> */}
                 <p><span>Metaverse Urban Architect</span></p>
                 <div>
-                  <button>HOLA</button>
-                  <button>HOLA</button>
-                  <button>HOLA</button>
+                  <div className="social-links">
+                    <a className="social-media-button slow-transition-bg" href="https://www.linkedin.com/in/picoj/" target="_blank">
+                      <i className="fa fa-linkedin bg-color-primary">
+                        <img src={socialLn} className="media-ico" />
+                      </i>
+                    </a>
+                    <a className="social-media-button" href="https://twitter.com/picoj?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">
+                    <img src={socialTw} className="media-ico" />
+                    </a>
+                    <a className="social-media-button slow-transition-bg" href="http://www.picoj.com/" target="_blank">
+                      <i className="fa fa-rss-square bg-color-primary">
+                        <img src={socialst} className="media-ico" />
+                      </i>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
             <div className="team t2">
               <div className="team-overlay">
-                <h3> JOSE</h3>
-                <p><span>Metaverse Urban Architect</span></p>
+                <h3> Sonia Díez</h3>
+                <p><span>Educational possibilist</span></p>
                 <div>
-                  <button>IN</button>
-                  <button>Twitter</button>
-                  <button>Educa</button>
+                  <div className="social-links">
+                    <a className="social-media-button slow-transition-bg" href="https://www.linkedin.com/in/sonia-d%C3%ADez/" target="_blank">
+                      <i className="fa fa-linkedin bg-color-primary">
+                        <img src={socialLn} className="media-ico" />
+                      </i>
+                    </a>
+                    <a className="social-media-button" href="https://twitter.com/soniadiez_edu" target="_blank">
+                    <img src={socialTw} className="media-ico" />
+                    </a>
+                    <a className="social-media-button slow-transition-bg" href="https://www.educaccion.org/" target="_blank">
+                      <i className="fa fa-rss-square bg-color-primary">
+                        <img src={socialst} className="media-ico" />
+                      </i>
+                    </a>
+                  </div>
                 </div>
               </div>              
             </div>
             <div className="team t3">
               <div className="team-overlay">
-                <h3> JOSE</h3>
-                <p><span>Metaverse Urban Architect</span></p>
+                <h3>Fen Sierra</h3>
+                <p><span>Technologist Metaverse</span></p>
                 <div>
-                  <button>HOLA</button>
-                  <button>HOLA</button>
-                  <button>HOLA</button>
+                  <div className="social-links">
+                    <a className="social-media-button slow-transition-bg" href="https://www.linkedin.com/in/fernandosvr/" target="_blank">
+                      <i className="fa fa-linkedin bg-color-primary">
+                        <img src={socialLn} className="media-ico" />
+                      </i>
+                    </a>
+                    <a className="social-media-button" href="https://twitter.com/FernandoXierra" target="_blank">
+                    <img src={socialTw} className="media-ico" />
+                    </a>
+                    <a className="social-media-button slow-transition-bg" href="https://educa360.com/" target="_blank">
+                      <i className="fa fa-rss-square bg-color-primary">
+                        <img src={socialst} className="media-ico" />
+                      </i>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -223,41 +263,80 @@ export default function Home() {
           <div className="group-teams">
             <div className="team t4">
               <div className="team-overlay">
-                <h3> JOSE</h3>
-                <p><span>Metaverse Urban Architect</span></p>
+                <h3>Antonio Sierra</h3>
+                <p><span>Advisor Expert Metaverse</span></p>
                 <div>
-                  <button>HOLA</button>
-                  <button>HOLA</button>
-                  <button>HOLA</button>
+                  <div className="social-links">
+                    <a className="social-media-button slow-transition-bg" href="https://www.linkedin.com/in/antoniossxr/" target="_blank">
+                      <i className="fa fa-linkedin bg-color-primary">
+                        <img src={socialLn} className="media-ico" />
+                      </i>
+                    </a>
+                    <a className="social-media-button" href="https://twitter.com/Antonio_SxR" target="_blank">
+                    <img src={socialTw} className="media-ico" />
+                    </a>
+                    <a className="social-media-button slow-transition-bg" href="https://educa360.org/" target="_blank">
+                      <i className="fa fa-rss-square bg-color-primary">
+                        <img src={socialst} className="media-ico" />
+                      </i>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
             <div className="team t5">
               <div className="team-overlay">
-                <h3> JOSE</h3>
-                <p><span>Metaverse Urban Architect</span></p>
+                <h3>Adriano Pérez</h3>
+                <p><span>MInvestor & Metaverse Expert</span></p>
                 <div>
-                  <button>IN</button>
-                  <button>Twitter</button>
-                  <button>Educa</button>
+                  <div className="social-links">
+                    <a className="social-media-button slow-transition-bg" href="https://www.linkedin.com/in/adrianoperez/" target="_blank">
+                      <i className="fa fa-linkedin bg-color-primary">
+                        <img src={socialLn} className="media-ico" />
+                      </i>
+                    </a>
+                    <a className="social-media-button" href="https://twitter.com/Adrianoperezgil" target="_blank">
+                    <img src={socialTw} className="media-ico" />
+                    </a>
+                    <a className="social-media-button slow-transition-bg" href="https://educaverse.org/" target="_blank">
+                      <i className="fa fa-rss-square bg-color-primary">
+                        <img src={socialst} className="media-ico" />
+                      </i>
+                    </a>
+                  </div>
                 </div>
               </div>              
             </div>
             <div className="team t6">
               <div className="team-overlay">
-                <h3> JOSE</h3>
-                <p><span>Metaverse Urban Architect</span></p>
+                <h3>Fran Roncero</h3>
+                <p><span>Creative Director Metaverse</span></p>
                 <div>
-                  <button>HOLA</button>
-                  <button>HOLA</button>
-                  <button>HOLA</button>
+                  <div className="social-links">
+                    <a className="social-media-button slow-transition-bg" href="https://www.linkedin.com/in/fran-roncero-080753178/" target="_blank">
+                      <i className="fa fa-linkedin bg-color-primary">
+                        <img src={socialLn} className="media-ico" />
+                      </i>
+                    </a>
+                    <a className="social-media-button" href="https://twitter.com/roncero_franM" target="_blank">
+                    <img src={socialTw} className="media-ico" />
+                    </a>
+                    <a className="social-media-button slow-transition-bg" href="https://educa360.com/" target="_blank">
+                      <i className="fa fa-rss-square bg-color-primary">
+                        <img src={socialst} className="media-ico" />
+                      </i>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>      
         </div>
+        
         <div className="img-position">
-          <div className="team-img"></div>
+          <div>
+            <img src="https://content.app-sources.com/s/49401586197528073/uploads/equipo/educaverse_Team2-2107823.png" className="team-img" />
+          </div>
         </div>
         <div></div>
       </div>

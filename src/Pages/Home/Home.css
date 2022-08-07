@@ -96,13 +96,12 @@ p {
   margin-bottom: 5%; 
   height: auto;
   padding-bottom: 15px;
-  /* border: 2px solid rgb(99, 37, 37); */
+  
   display: flex;
   align-items: center;
   align-content: center;
   flex-direction: column;
-  /* background-color: rgb(237, 155, 155); */
-  /* height: 500px; */
+  justify-content: center;
 }
 
 .lands-resume {
@@ -110,7 +109,8 @@ p {
   align-items: center;
   align-content: center;
   flex-direction: column;
-
+  width: 100%;
+  margin: 1px;
 }
 
 .OpenSea-div {
@@ -190,6 +190,13 @@ p {
 .lands-img-section {
   width: 325px;
   min-width: 175px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  
+  /* height: 200px; */
+  /* min-width: 4; */
   /* padding: 3px; */
   /* width: 99%; */
   /* max-width: 275px; */
@@ -199,6 +206,7 @@ p {
   /* border: 2px solid rgb(255, 255, 255); */
 }
 
+
 .land-img-one,
 .land-img-Two,
 .land-img-Tree,
@@ -206,6 +214,7 @@ p {
   width: 100%;
   max-width: 100%;
 }
+
 
 .lands-ratio {}
 
@@ -291,12 +300,7 @@ p {
   top: -25px;
   background-image: linear-gradient(27deg, rgba(135, 0, 156, 0.808) 0%, rgb(4, 167, 255) 100%);
 }
-.land-img-one{
-  position: relative;
-  margin-top: -25%;
-  /* top: 10%; */
-  max-width: 90%; 
-}
+
 
 .feature-button{
   font-size: 18px;
@@ -327,7 +331,7 @@ p {
   margin: 0;
   /* height: 500px; */
   /* background-color: rgb(221, 29, 179); */
-  border: 2px solid rgb(0, 0, 0);
+  /* border: 2px solid rgb(0, 0, 0); */
   display: flex;
   align-items: center;
   align-content: center;
@@ -353,19 +357,19 @@ p {
 
 
 .teams {
-  width: 80%;
+   width: 100vw; 
   /* height: 500px; */
-  padding: 15px;
+  /* padding: 15px; */
   /* margin: ; */
 
   /* background-color: rgba(77, 184, 47, 0.645); */
   /* border: 2px solid rgb(0, 0, 0); */
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  /* align-items: center;
   align-content: center;
   justify-content: center;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
 }
 
 .group-teams {
@@ -382,14 +386,15 @@ p {
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 300px;
+  width: 350px;
+  height: 550px;
   max-width: 400px;
   min-width: 180px;
   min-height: 350px;
-  margin: 5px;
+  margin: 2%;
   /* padding: 2px; */
-  border: 2px solid rgb(228, 14, 14);
-  border-radius: 10%;
+  /* border: 2px solid rgb(228, 14, 14); */
+  border-radius: 5%;
   box-shadow: 0px 0px 25px 0px rgb(0, 0, 0);
   overflow: hidden;    
   color: white;       
@@ -406,18 +411,64 @@ p {
   align-items: center;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 5%;
-  width: 300px;
-  max-width: 400px;
+  padding:5%;
+  width: 100%;
+  /* max-width: 400px; */
   min-width: 180px;
-  min-height: 350px;  
-  border-radius: 10%;
+  min-height: 350px;
+  height: 100%;  
+  /* border-radius: 10%; */
   /* height: 100%; */
-  background-color: rgba(0, 0, 0, 0.507);
+  background-color: rgba(0, 0, 0, 0.486);
   overflow: hidden
 }
+.team-overlay > h3 {
+  position: absolute;
+  font-size: 50px;
+  font-weight: 400;
+  top: 50%;
+  color: white;
+}
+.team-overlay > p {
+  position: absolute;  
+  font-size: 26px;
+  font-weight: 500;
+  top: 72%;
+  color: rgb(25, 160, 238);
+}
+.team-overlay > div{
+  position: absolute;  
+  top: 85%;
+}
 
-
+.social-links{
+   display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.social-media-button{
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  min-height: 60px; 
+  min-width: 60px;
+  margin: 4%;
+  border: 3px solid #16152048;
+  border-radius: 3% ;
+  background-color: #d6d5df56;
+  box-shadow: 0px 0px 2px 0px rgb(124, 123, 123);
+  cursor: pointer;
+}
+.media-ico{
+  /* position: relative; */
+  color: white;
+  display: flex;
+  max-width: 40px;
+  max-height: 40px;
+}
 
 .t1 {        
   background-image: url('https://content.app-sources.com/s/49401586197528073/uploads/equipo/pico-2001788.jpg');        
@@ -445,29 +496,23 @@ p {
 
 .img-position {
   width: 100%;
-  height: 35vh;
+  height: 100%;
   /* height: 350px; */
-
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: center;
 
-
 }
 
-/* .team-img {
+.team-img {
   width: 100%;
   height: 100%;
   position: relative;
-  left: 25%;
+
   top: 0%;
-  background-image: url('https://content.app-sources.com/s/49401586197528073/uploads/equipo/pico-2001788.jpg');
-                 
-                   background-size: cover;
-                   background-repeat: no-repeat;
-                   background-position: center center;
-} */
+
+} 
 
 
 
@@ -503,9 +548,9 @@ p {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .tittle-h1 {
-    font-size: 48px;
+    font-size: 42px;
     width: 100vw;
     padding-bottom: 5%;
   }
