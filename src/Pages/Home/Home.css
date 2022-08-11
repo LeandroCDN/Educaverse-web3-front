@@ -546,6 +546,11 @@ p {
     height: 400px;
     width: auto;
   }
+  .f-two {
+    position: relative;
+    top: 0px;
+    background-image: linear-gradient(27deg, rgba(135, 0, 156, 0.808) 0%, rgb(4, 167, 255) 100%);
+  }
 }
 
 @media (max-width: 450px) {
@@ -554,6 +559,12 @@ p {
     width: 100vw;
     padding-bottom: 5%;
   }
+  .f-two {
+    position: relative;
+    top: 0px;
+    background-image: linear-gradient(27deg, rgba(135, 0, 156, 0.808) 0%, rgb(4, 167, 255) 100%);
+  }
+  
 
   .p1 {
     position: relative;

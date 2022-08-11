@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 // import ERC20 from "../../../contractAbi/ERC20.json";
 import AXONabi from "../../../contractAbi/axonAbi.json";
 import AXONSALEabi from "../../../contractAbi/axonSaleAbi.json";
 import abi from "../../../contractAbi/abi.json";
 import "./buyform.css";
+import { types } from "../../../store/storeReducer";
+import { StoreContext } from "../../../store/StoreProvider";
 
 var Web3 = require('web3');
 
@@ -12,6 +14,9 @@ const axon = "0xB21943131204671804663a00e467e77f6f8c7D78"; //mumbai
 const axonSale = "0x323CDB986e56071ABA84f36121EC0dcDbc7fEbB9"; //mumbai
 
 export default function BuyForm(){
+  const [store, dispatch] = useContext(StoreContext);
+  const {walletAccount} = store;
+
   const [walletAddress, setWalletAddress] = useState("");
   const [tokenBalance, settokenBalance] = useState("");
   const [axonPrice, setaxonPrice] = useState("");
@@ -29,6 +34,10 @@ export default function BuyForm(){
       window.web3 = new Web3(window.ethereum);
       await initContracts();
       setWalletAddress(accounts[0]);
+      dispatch({
+        type: types.productWallet,
+        payload: {address: accounts[0] }
+      })
       return true;
     }    
     return false;
@@ -94,6 +103,7 @@ export default function BuyForm(){
     {walletAddress != ""
      ? <div className="buyForm">
         <p>Your dai balance: {toEther(tokenBalance)}</p>
+        
         <p> Axon price: {toEther(axonPrice)}</p>          
         <form>
           <input type="text" onChange={handleChange} id="message" placeholder="Cant of Axon" className="inputForm"/>

@@ -1,6 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 // import ErrorMessage from "./ErrorMessage";
 import truncateEthAddress from 'truncate-eth-address'
+import { StoreContext } from "../../store/StoreProvider";
+import { types } from "../../store/storeReducer";
 import "./button.css";
 
 const networks = {
@@ -45,10 +47,9 @@ const changeNetwork = async ({ networkName, setError }) => {
 };
 
 
-
 const ConectButton = () => {
-
-  const [walletAddress, setWalletAddress] = useState("");
+  const [store, dispatch] = useContext(StoreContext);
+  const {walletAccount} = store;
   const [error, setError] = useState();
 
   const handleNetworkSwitch = async (networkName) => {
@@ -82,6 +83,7 @@ const ConectButton = () => {
 
 
   async function conectWallet() {
+    
     if(typeof window.ethereum !== 'undefined'){
       const ethChainId = await window.ethereum.request({
         method: 'eth_chainId',
@@ -91,7 +93,12 @@ const ConectButton = () => {
         const accounts = await window.ethereum.request({
           method: "eth_requestAccounts",
         });
-        setWalletAddress(accounts[0]);
+       
+        dispatch({
+          type: types.productWallet,
+          payload: {address: accounts[0] }
+        })
+        
         if((ethChainId != `0x${Number(80001).toString(16)}`)){
           handleNetworkSwitch("mumbai"); 
         }
@@ -106,14 +113,14 @@ const ConectButton = () => {
 
   return(
     <>
-    { walletAddress == ""
+    { walletAccount.address == ""
       ? <button
           onClick={conectWallet}
           className="conectButton"
         >
           Connect Wallet
         </button>
-      : <p>{truncateEthAddress(walletAddress)}</p>
+      : <p> {truncateEthAddress(walletAccount.address)} </p>
     }
     </>
   )

@@ -1,10 +1,10 @@
-import {ConectButton} from "../../ConectButton";
+import {ConectButton} from "../ConectButton";
 import React, { useState } from "react";
 import "./Navbar.css";
 import { useAccordionButton } from "react-bootstrap";
 
 
-function Navbar() {
+function Navbar({ wallet, setWallet}) {
   const [isOpen, setIsOpen] = useState(false);
   return(
     <div className="Navbar">
@@ -19,7 +19,7 @@ function Navbar() {
 
         </div>
       </div>
-      <ConectButton/>
+      <ConectButton wallet={wallet} setwallet={setWallet}/>
     </div>
   )
 
