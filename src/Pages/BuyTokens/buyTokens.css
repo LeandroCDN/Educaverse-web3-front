@@ -1,22 +1,24 @@
 .column {
   position: flex;
-  left: 0%;   
+  left: 0%;
+  height: 80vh;   
   min-width: 400px;
   min-height: 500px;
-  /* height: px; */
-  max-height: 100vh;
-  /* background: rgb(87, 90, 106);   */
-  /* width: 50%; */
+  max-height: 100vh; 
   display: flex; 
   text-align: center;
   flex-direction: column;
   align-items: center; 
   justify-content: center; 
 } 
+.c-One {
+  position: relative;
+  left: -7%;
+}
 
 .axonImg{  
   min-height: 200px; 
-  max-height: 500px; 
+  max-height: 700px; 
   margin-bottom: 15%;
   margin-right: 15%;
 }
@@ -30,7 +32,7 @@
   max-height: 75vh;
   border-radius: 20px;  
   */
-  
+  margin: 1px;
   color: rgba(255, 255, 255, 0.348);
   font-size: 20px;
   display: flex;
@@ -42,6 +44,7 @@
 
 .ContextFormBox{
   /* background: rgba(255, 255, 255, 0.137); */
+  max-width: 600px;
   background: linear-gradient(rgba(255, 255, 255, 0.1), #3534527b);
   position: relative;
   margin-top: 15px; 
@@ -69,13 +72,17 @@
 } */
 
 .h1Form{
+  position: relative;
+  
   color:rgba(255, 255, 255, 1);
   font-size: 60px;
-  margin: 0;
+  margin:15px;
   padding: 0px;
 }
 
 .pbuyForm{
+  margin: 3%;
+  
   /* width: 400px; */
 }
 
@@ -85,6 +92,19 @@
 @media (max-width: 600px) {
   .buy-video{
     display: none;  
+  }
+  .c-One {
+
+    position: relative;
+    left: 0%;
+  }
+  .axonImg{  
+    position: relative;
+    left: 0%;
+    min-height: 300px; 
+    width: 80%;
+    max-height: 700px; 
+    margin:0px;
   }
 }
 /*

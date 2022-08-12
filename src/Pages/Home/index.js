@@ -39,7 +39,14 @@ export default function Home() {
         </div>     
         <div className="tittle-video">
           <HomeVideo/>
-        </div>      
+          <div className="home-video-div">          
+            <img src={eduverseLogo} className="home-video-img" />
+          </div> 
+        </div>     
+       
+          {/* <div className="home-video-div">          
+            <img src={eduverseLogo} className="home-video-img" />
+          </div>  */}
       </div> 
 
       <div className="lands">        

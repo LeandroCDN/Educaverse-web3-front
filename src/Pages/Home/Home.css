@@ -1,7 +1,7 @@
 .pagestyle {
   background: #232234;
   max-width: 100vw;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 
@@ -11,7 +11,7 @@
   /* border: 2px solid rgb(0, 0, 0); */
   display: block;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   height: 950px;
   min-height: 700px;
   max-height: 80vh;
@@ -44,7 +44,7 @@
 }
 
 .tittle-h1 {
-  font-size: 90px;
+  font-size: 100px;
   margin: 0px;
   padding: 0px;
   top: 3vh;
@@ -55,7 +55,7 @@
 
 .tittle-p {
   position: relative;
-  font-size: 20px;
+  font-size: 24px;
   /* font-family: "Open Sans"; */
   padding: 2%;
 }
@@ -77,17 +77,22 @@ p {
 }
 
 .home-video-div {
+  min-height: 100px;
   position: relative;
-  padding: 10px;
-
-
+  top: -200px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 
 .home-video-img {
-  width: 85%;
-  position: relative;
-  /* top: 3vw; */
-  left: 0px;
+  
+  min-width: 25%;
+  height: 25%;
+  min-height: 100px;
+  min-width: 100px;
+  
 }
 
 
@@ -540,12 +545,10 @@ p {
     top: 75px;
   }
 
-  .home-video-div {
-    position: relative;
-    top: 180px;
-    height: 400px;
-    width: auto;
-  }
+   .home-video-div {
+    
+    min-width: 10%;
+  } 
   .f-two {
     position: relative;
     top: 0px;
@@ -577,11 +580,13 @@ p {
     top: 55px;
   }
 
-  .home-video-div {
-    position: relative;
-    top: 120px;
-    height: 400px;
-    width: auto;
+  .home-video-img {
+  
+    width: 55%;
+    height: 55%;
+    min-height: 70px;
+    min-width: 70px;
+    
   }
 }
 
