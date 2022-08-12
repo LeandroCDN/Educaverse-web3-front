@@ -120,7 +120,7 @@ const ConectButton = () => {
         >
           Connect Wallet
         </button>
-      : <p> {truncateEthAddress(walletAccount.address)} </p>
+      : <p className="PwalletAddres"> {truncateEthAddress(walletAccount.address)} </p>
     }
     </>
   )
