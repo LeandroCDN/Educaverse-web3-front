@@ -32,21 +32,14 @@ export default function Home() {
             <p>We employ blockchain technology to enable our users to</p>
             <p>own NFTs assets on a virtual platform built on web 3.0.</p>
           </div>
-          {/* <div className="home-video-div">          
+          <div className="home-video-div">          
             <img src={eduverseLogo} className="home-video-img" />
-          </div> */}
+          </div>
           
         </div>     
         <div className="tittle-video">
           <HomeVideo/>
-          <div className="home-video-div">          
-            <img src={eduverseLogo} className="home-video-img" />
-          </div> 
-        </div>     
-       
-          {/* <div className="home-video-div">          
-            <img src={eduverseLogo} className="home-video-img" />
-          </div>  */}
+        </div>      
       </div> 
 
       <div className="lands">        

@@ -15,14 +15,8 @@
   max-height: 70px;  
   padding: 15px;
   border-radius: 4px;
-<<<<<<< HEAD
   font-size: 28px;
   margin-bottom: 10px;
-=======
-  font-size: 24px;
-  margin: 5px;
-  
->>>>>>> 0429cd6dea91a6087ebdbf80acc850532c86c11e
   border: none;
   border-radius: 10px;
   background-color: rgb(33, 36, 41);
@@ -44,13 +38,8 @@ textarea:focus, input:focus {
   padding-right: 30px;
   min-height: 55px;
   border-radius: 7px;
-<<<<<<< HEAD
   font-size: 28px;
   font-weight: 600;
-=======
-  margin: 10px;
-  font-size: 21px;
->>>>>>> 0429cd6dea91a6087ebdbf80acc850532c86c11e
   /* font-family:'Arial'; */
   border: 3px solid transparent;
   cursor:pointer;
@@ -61,13 +50,6 @@ textarea:focus, input:focus {
   background-color: rgba(240, 248, 255, 0);
   border: none;
   cursor:pointer;
-}
-.ContextFormBox > p {
-  margin: 0px;
-}
-.buyForm > p {
-  margin-bottom: 7px;
-  font-size: 28px;
 }
 
 @media (max-width: 600px) {
