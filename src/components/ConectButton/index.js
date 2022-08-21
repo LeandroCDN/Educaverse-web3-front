@@ -12,13 +12,24 @@ const networks = {
     nativeCurrency: {
       name: "rETH",
       symbol: "rETH",
-      decimals: 18
+      decimals: 18,
     },
     rpcUrls: ["https://rpc.ankr.com/eth_rinkeby"],
     blockExplorerUrls: ["https://rinkeby.etherscan.io/"]
   },
+  goerli: {
+    chainId: `0x${Number(5).toString(16)}`,
+    chainName: "Goerli",
+    nativeCurrency: {
+      name: "gETH",
+      symbol: "gETH",
+      decimals: 18,
+    },
+    rpcUrls: ["https://goerli.infura.io/v3/"],
+    blockExplorerUrls: ["https://goerli.etherscan.io"]
+  },
   mumbai:{
-    chainId: `0x${Number(80001).toString(16)}`,
+    chainId: 0x5,
     chainName: "Mumbai",
     nativeCurrency: {
       name: "Matic",
@@ -34,12 +45,8 @@ const changeNetwork = async ({ networkName, setError }) => {
   try {
     if (!window.ethereum) throw new Error("No crypto wallet found");
     await window.ethereum.request({
-      method: "wallet_addEthereumChain",
-      params: [
-        {
-          ...networks[networkName]
-        }
-      ]
+      method: "wallet_switchEthereumChain",
+      params: [{ chainId: '0x5' }],
     });
   } catch (err) {
     setError(err.message);
@@ -63,8 +70,8 @@ const ConectButton = () => {
 
   const networkChanged = (chainId) => {
     console.log({ chainId });
-    if(!(chainId === 80001)){
-      handleNetworkSwitch("mumbai"); 
+    if(!(chainId === 5)){
+      handleNetworkSwitch("goerli"); 
     }
   };
 
@@ -81,32 +88,37 @@ const ConectButton = () => {
     
   }, []);
 
-
+  
   async function conectWallet() {
     
     if(typeof window.ethereum !== 'undefined'){
       const ethChainId = await window.ethereum.request({
         method: 'eth_chainId',
       });
-      // console.log(ethChainId);
-      try{
-        const accounts = await window.ethereum.request({
-          method: "eth_requestAccounts",
-        });
-       
-        dispatch({
-          type: types.productWallet,
-          payload: {address: accounts[0] }
-        })
-        
-        if((ethChainId != `0x${Number(80001).toString(16)}`)){
-          handleNetworkSwitch("mumbai"); 
+      console.log(ethChainId);
+      if((ethChainId != 0x5)){
+        handleNetworkSwitch("goerli"); 
+      }else {
+        try{
+
+          const accounts = await window.ethereum.request({
+            method: "eth_requestAccounts",
+          });
+         
+          dispatch({
+            type: types.productWallet,
+            payload: {address: accounts[0] }
+          })
+          
+          
+        }catch(error){
+          console.log('Error connecting...');
         }
-      }catch(error){
-        console.log('Error connecting...');
+
       }
+      
     }else {
-      window.alert('Please isntall metamask!');
+      window.alert('Please install metamask!');
     }
   }
   
@@ -120,7 +132,7 @@ const ConectButton = () => {
         >
           Connect Wallet
         </button>
-      : <p> {truncateEthAddress(walletAccount.address)} </p>
+      : <div className="div-button-wallet"><p className="p-button-wallet"> {truncateEthAddress(walletAccount.address)} </p></div>
     }
     </>
   )

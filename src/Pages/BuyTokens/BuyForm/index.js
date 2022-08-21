@@ -9,9 +9,9 @@ import { StoreContext } from "../../../store/StoreProvider";
 
 var Web3 = require('web3');
 
-const dai = "0x47e3d6A52293ecF9158a06C2499A17BeC58aFAeD"; //mumbai
-const axon = "0xB21943131204671804663a00e467e77f6f8c7D78"; //mumbai
-const axonSale = "0x323CDB986e56071ABA84f36121EC0dcDbc7fEbB9"; //mumbai
+const dai = "0x47e3d6A52293ecF9158a06C2499A17BeC58aFAeD"; //Goerli
+const axon = "0x171dcf9101deA340646aF7C854f9Dc4A05B141f1"; //Goerli
+const axonSale = "0xCb97e5EE30485f96Bb2f17113077b5B803b56248"; //Goerli
 
 export default function BuyForm(){
   const [store, dispatch] = useContext(StoreContext);
@@ -45,7 +45,7 @@ export default function BuyForm(){
   
   async function initContracts(){
     
-    daiContract = new window.web3.eth.Contract(abi, dai);
+    daiContract = new window.web3.eth.Contract(abi, dai);    
     axonSaleContract = new window.web3.eth.Contract(AXONSALEabi, axonSale);
     axonContract = new window.web3.eth.Contract(AXONabi, axon);
   }
@@ -61,10 +61,12 @@ export default function BuyForm(){
   }
 
   async function aproveAndBuy() {
+    console.log(daiContract.methods);
     const cantOfAxon = (daiCost.toString() / axonPrice.toString());
     const cantOfAxonInWei = Web3.utils.toWei(cantOfAxon.toString(), 'ether');
-    console.log(cantOfAxonInWei);
-    const alloawance = await daiContract.methods.allowance(walletAddress, axonSale).call()
+    await initContracts();
+    const alloawance = await daiContract.methods.allowance(walletAddress, axonSale).call();
+    console.log(alloawance);
     if(alloawance.toString()<"10000000000"){
       approve().then(()=> {buy(cantOfAxonInWei)});
     }else{
@@ -87,7 +89,7 @@ export default function BuyForm(){
   
   
   const handleChange = event => {
-    const cost = calculateCostInDai(event.target.value);
+    const cost = calculateCostInDai(event.target.value.toString());
    
     setdaiCost(cost);
   };
@@ -102,18 +104,17 @@ export default function BuyForm(){
     <>
     {walletAddress != ""
      ? <div className="buyForm">
-        <p>Your dai balance: {toEther(tokenBalance)}</p>
-        
-        <p> Axon price: {toEther(axonPrice)}</p>          
+        <p >Your dai balance: {toEther(tokenBalance)}</p>        
+        <p> Axon price: {toEther(axonPrice)} dais</p>          
         <form>
-          <input type="text" onChange={handleChange} id="message" placeholder="Cant of Axon" className="inputForm"/>
+          <input type="number" onChange={handleChange} id="message" placeholder="Cant of Axon" className="inputForm"/>
           {/* <br /><br /> */}
           {/* <button type="button" onClick={aproveAndBuy} className="invertButton">↑ ↓</button> */}
         
-          <input type="text" placeholder="cost in dai" value={toEther(daiCost) + " dais"} className="inputForm"/>
+          <input type="text" placeholder="cost in dai" value={'Cost: '+toEther(daiCost) + " dais"} className="inputForm"/>
           
           <button type="button" onClick={aproveAndBuy} className="buyFormButton">BUY AXON</button>
-          <p>1 dai : {toEther(axonPrice)} axon<button className="InvertButton">🔄</button></p>
+          {/* <p> 1 axon : {toEther(axonPrice)} dai</p> */}
           
         </form>
       </div>

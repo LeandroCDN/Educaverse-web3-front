@@ -10,8 +10,7 @@ function Navbar({ wallet, setWallet}) {
     <div className="Navbar">
       <span className={"nav-logo nav-items"}>EDUCAVERSE </span>
       <div className={`nav-items ${isOpen && "open"}`}>
-        <a href="/">Home</a> 
-        <a href="/buytokens">Buy tokens</a>        
+        <a href="https://educaverse.org/">Home</a>        
         <a href="https://content.app-sources.com/s/49401586197528073/uploads/pdf/WP_VentaPrivada-Educaverse_V.06-5310040.pdf" >Whitepaper</a>
       </div>
       <div className={`nav-toggle ${isOpen && "open"}`} onClick={() => setIsOpen(!isOpen)}>

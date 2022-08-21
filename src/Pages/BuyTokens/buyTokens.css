@@ -3,10 +3,7 @@
   left: 0%;   
   min-width: 400px;
   min-height: 500px;
-  /* height: px; */
   max-height: 100vh;
-  /* background: rgb(87, 90, 106);   */
-  /* width: 50%; */
   display: flex; 
   text-align: center;
   flex-direction: column;
@@ -16,8 +13,8 @@
 
 .axonImg{  
   min-height: 200px; 
-  max-height: 500px; 
-  margin-bottom: 15%;
+  max-height: 600px; 
+  margin-bottom: 25%;
   margin-right: 15%;
 }
 .buyBox{
@@ -41,20 +38,20 @@
 }
 
 .ContextFormBox{
-  /* background: rgba(255, 255, 255, 0.137); */
   background: linear-gradient(rgba(255, 255, 255, 0.1), #3534527b);
   position: relative;
   margin-top: 15px; 
-  padding-top: 25px;
-  padding-bottom: 25px;
-  /* max-width: 40%; */
-  /* width: 800px; */
+  margin-bottom: 15px; 
+  padding-top: 10px;
+  padding-bottom: 10px;
   min-width: 300px;
-  /* min-height: 400px; */
-  /* max-height: 20%; */
   border-radius: 20px;
   box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 1);
   color: rgb(255, 255, 255);
+  font-size: 22px;
+  max-width: 700px;
+  width: 600px; 
+  max-height: 550px;
 }
 
 /* .buyForm{
@@ -80,11 +77,26 @@
 }
 
 .buy-video{
-  min-width: 100vw;  
+  min-width: 100%;  
 }
 @media (max-width: 600px) {
   .buy-video{
     display: none;  
+  }
+
+  .ContextFormBox{
+    width: 90%;
+    margin: 0px;
+    padding:5px;
+    border-radius: 5px;
+  }
+  .axonImg{  
+    /* min-height: 200px; 
+    max-height: 500px;  */
+    margin-bottom: 0px;
+    margin-right: 0px;
+    left: 0px;
+    top:0px;
   }
 }
 /*
