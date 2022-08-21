@@ -8,7 +8,7 @@ export default function Buytokens() {
 
   return(
     <>
-      <div className="column">
+      <div className="column c-One">
         <div className="buyBox">
           <h1 className="h1Form">AXON - ICO</h1>
           <p className="pbuyForm">
@@ -22,7 +22,7 @@ export default function Buytokens() {
           <br></br>
         </div>
       </div>
-      <div className="column">
+      <div className="column c-two">
         <img src={axonImg} className="axonImg" alt=""/>     
       </div>
       <div className="buy-video">
