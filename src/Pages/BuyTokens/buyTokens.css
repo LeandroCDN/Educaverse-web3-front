@@ -74,6 +74,7 @@
 
 .pbuyForm{
   /* width: 400px; */
+  margin-bottom: 35px;
 }
 
 .buy-video{
@@ -97,6 +98,7 @@
     margin-right: 0px;
     left: 0px;
     top:0px;
+    max-height: 100%;
   }
 }
 /*

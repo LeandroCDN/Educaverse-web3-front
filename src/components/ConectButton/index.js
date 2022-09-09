@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import truncateEthAddress from 'truncate-eth-address'
 import { StoreContext } from "../../store/StoreProvider";
 import { types } from "../../store/storeReducer";
+import swal from 'sweetalert';
 import "./button.css";
 
 const networks = {
@@ -69,9 +70,10 @@ const ConectButton = () => {
   };
 
   const networkChanged = (chainId) => {
-    console.log({ chainId });
-    if(!(chainId === 5)){
+    console.log( chainId.toString() );
+    if(!(chainId.toString() === '0x5')){
       handleNetworkSwitch("goerli"); 
+      swal("Please select correct network");
     }
   };
 

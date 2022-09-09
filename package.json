@@ -23,6 +23,7 @@
     "react-youtube": "^9.0.3",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
+    "sweetalert": "^2.1.2",
     "truncate-eth-address": "^1.0.2",
     "url": "^0.11.0",
     "web-vitals": "^2.1.4",
@@ -57,6 +58,4 @@
   "devDependencies": {
     "gh-pages": "^4.0.0"
   }
-  
-
 }

@@ -6,12 +6,13 @@ import abi from "../../../contractAbi/abi.json";
 import "./buyform.css";
 import { types } from "../../../store/storeReducer";
 import { StoreContext } from "../../../store/StoreProvider";
+import swal from 'sweetalert';
 
 var Web3 = require('web3');
 
 const dai = "0x47e3d6A52293ecF9158a06C2499A17BeC58aFAeD"; //Goerli
 const axon = "0x171dcf9101deA340646aF7C854f9Dc4A05B141f1"; //Goerli
-const axonSale = "0xCb97e5EE30485f96Bb2f17113077b5B803b56248"; //Goerli
+const axonSale = "0x7B9d8ceED4367afD139d3A35BbF6346C8a201fdB"; //Goerli
 
 export default function BuyForm(){
   const [store, dispatch] = useContext(StoreContext);
@@ -21,6 +22,8 @@ export default function BuyForm(){
   const [tokenBalance, settokenBalance] = useState("");
   const [axonPrice, setaxonPrice] = useState("");
   const [daiCost, setdaiCost] = useState("");
+  const [canBuybool, setcanbuybool] = useState(false);  
+ 
   
   let daiContract = "";
   let axonContract = "";
@@ -40,6 +43,7 @@ export default function BuyForm(){
       })
       return true;
     }    
+    console.log("hola")
     return false;
   } 
   
@@ -48,6 +52,7 @@ export default function BuyForm(){
     daiContract = new window.web3.eth.Contract(abi, dai);    
     axonSaleContract = new window.web3.eth.Contract(AXONSALEabi, axonSale);
     axonContract = new window.web3.eth.Contract(AXONabi, axon);
+    
   }
 
 
@@ -56,7 +61,7 @@ export default function BuyForm(){
       const balance = await daiContract.methods.balanceOf(walletAddress).call();
       const price = await axonSaleContract.methods.getPrice().call();
       settokenBalance(balance);
-      setaxonPrice(price);
+      setaxonPrice(toEther(price));
     }
   }
 
@@ -66,11 +71,11 @@ export default function BuyForm(){
     const cantOfAxonInWei = Web3.utils.toWei(cantOfAxon.toString(), 'ether');
     await initContracts();
     const alloawance = await daiContract.methods.allowance(walletAddress, axonSale).call();
-    console.log(alloawance);
+    console.log(cantOfAxonInWei);
     if(alloawance.toString()<"10000000000"){
       approve().then(()=> {buy(cantOfAxonInWei)});
     }else{
-      buy(cantOfAxonInWei);
+      buy(cantOfAxonInWei).then(() => {getTokenBalance()});
     }
   }
 
@@ -83,14 +88,35 @@ export default function BuyForm(){
     await axonSaleContract.methods.buyTokens(cantOfAxonInWei.toString()).send({from: walletAddress });
   }
 
+
+  //New Functions
+  async function getAmountprice(amount){
+    await axonSaleContract.methods.getAmountprice(amount).call();
+  }
+  async function canBuy(){
+    // await initContracts();
+    let canBuy = await axonSaleContract.methods.canBuy().call();
+    console.log(canBuy);
+    setcanbuybool(canBuy);
+  }
+
+  // useEffect(() => {
+  //   canBuy();
+  // }, [])
+  // if(!canBuybool ){
+  //   canBuy();
+  // }
+
+  async function calculateCostInDaiWhitContract(tokensToBuy){
+    let amount = await axonSaleContract.methods.getAmountprice(tokensToBuy).call();
+    return (amount);
+  }
   function calculateCostInDai(tokensToBuy){
-    return (tokensToBuy.toString() * axonPrice.toString());
+    return (tokensToBuy * axonPrice).toString();
   }
   
-  
   const handleChange = event => {
-    const cost = calculateCostInDai(event.target.value.toString());
-   
+    const cost =  calculateCostInDai(event.target.value.toString());  
     setdaiCost(cost);
   };
 
@@ -98,25 +124,39 @@ export default function BuyForm(){
     return Web3.utils.fromWei(num.toString(), 'ether');
   }
 
-  ethEnabled().then( res=> {getTokenBalance();});
+  if(tokenBalance == ""){
+    ethEnabled().then( res=> {canBuy().then( res=> {getTokenBalance()})});
+  }
+  // console.log('hola');
   
   return(
     <>
     {walletAddress != ""
      ? <div className="buyForm">
-        <p >Your dai balance: {toEther(tokenBalance)}</p>        
-        <p> Axon price: {toEther(axonPrice)} dais</p>          
-        <form>
-          <input type="number" onChange={handleChange} id="message" placeholder="Cant of Axon" className="inputForm"/>
-          {/* <br /><br /> */}
-          {/* <button type="button" onClick={aproveAndBuy} className="invertButton">↑ ↓</button> */}
-        
-          <input type="text" placeholder="cost in dai" value={'Cost: '+toEther(daiCost) + " dais"} className="inputForm"/>
-          
-          <button type="button" onClick={aproveAndBuy} className="buyFormButton">BUY AXON</button>
-          {/* <p> 1 axon : {toEther(axonPrice)} dai</p> */}
-          
+      {canBuybool
+      ? <>
+        <p> Balance: {toEther(tokenBalance)} DAIs</p>        
+        <p className="p-buyForm"> Axon price: {axonPrice} dais</p>          
+        <form>          
+          <input type="number" disabled={toEther(tokenBalance) < axonPrice}  onChange={handleChange} id="message" placeholder="Cant of Axon" className="inputForm"/>
+          <input 
+            type="text"  
+            disabled="true" 
+            placeholder="cost in dai" 
+            value={'Cost: '+daiCost + " dais"} 
+            className={(toEther(tokenBalance) < axonPrice ? "inputForm" : "inputForm2")}/>
+          <button 
+            type="button" 
+            disabled={toEther(tokenBalance) < axonPrice} 
+            onClick={aproveAndBuy} 
+            className={(toEther(tokenBalance) < axonPrice ? "buyFormButton" : "buyFormButtonPointer")}
+          >
+            BUY 
+          </button>
         </form>
+        </>
+      : <p> No hay tokens a la venta</p>
+      }
       </div>
      : <p> Please conect your wallet first </p>
     }
