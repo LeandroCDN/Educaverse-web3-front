@@ -11,8 +11,8 @@ import swal from 'sweetalert';
 var Web3 = require('web3');
 
 const dai = "0x47e3d6A52293ecF9158a06C2499A17BeC58aFAeD"; //Goerli
-const axon = "0x171dcf9101deA340646aF7C854f9Dc4A05B141f1"; //Goerli
-const axonSale = "0x7B9d8ceED4367afD139d3A35BbF6346C8a201fdB"; //Goerli
+const axon = "0xC4e76c65933165F9090B652dEFA0B9FC0f23d261"; //Goerli
+const axonSale = "0x53825bad1083C0d6DBc297c730345Dc6B658F81e"; //Goerli
 
 export default function BuyForm(){
   const [store, dispatch] = useContext(StoreContext);
@@ -71,21 +71,27 @@ export default function BuyForm(){
     const cantOfAxonInWei = Web3.utils.toWei(cantOfAxon.toString(), 'ether');
     await initContracts();
     const alloawance = await daiContract.methods.allowance(walletAddress, axonSale).call();
-    console.log(cantOfAxonInWei);
+   
     if(alloawance.toString()<"10000000000"){
-      approve().then(()=> {buy(cantOfAxonInWei)});
+      approve().then(()=> {buy(cantOfAxonInWei).then(() => {getTokenBalance()})});
     }else{
       buy(cantOfAxonInWei).then(() => {getTokenBalance()});
     }
   }
 
-  
-
   async function approve(){
     await daiContract.methods.approve(axonSale, "5000000000000000000000000000000").send({from: walletAddress })
   }
+
   async function buy(cantOfAxonInWei){
-    await axonSaleContract.methods.buyTokens(cantOfAxonInWei.toString()).send({from: walletAddress });
+    const onSale = await axonSaleContract.methods.getAmountOnSale().call()
+    
+    if(parseInt(toEther(onSale)) >= parseInt(toEther(cantOfAxonInWei))){
+      await axonSaleContract.methods.buyTokens(cantOfAxonInWei.toString()).send({from: walletAddress });
+    }else{
+      swal('Not enough tokens to sell ')
+    }
+        
   }
 
 

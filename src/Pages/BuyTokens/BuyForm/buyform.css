@@ -88,6 +88,9 @@ textarea:focus, input:focus {
   .inputForm{
     font-size: 20px;  
   }
+  .inputForm2{
+    font-size: 20px;  
+  }
 }
 
 /* -webkit-font-smoothing: antialiased;
