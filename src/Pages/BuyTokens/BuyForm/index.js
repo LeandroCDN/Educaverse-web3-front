@@ -11,8 +11,8 @@ import swal from 'sweetalert';
 var Web3 = require('web3');
 
 const dai = "0x47e3d6A52293ecF9158a06C2499A17BeC58aFAeD"; //Goerli
-const axon = "0xC4e76c65933165F9090B652dEFA0B9FC0f23d261"; //Goerli
-const axonSale = "0x53825bad1083C0d6DBc297c730345Dc6B658F81e"; //Goerli
+const axon = "0xE9e78a448a67d913A8f8d2A8627f26Ece4093c34"; //Goerli
+const axonSale = "0xD6Eb81a7235FEB620F60BC4508E80Fa0edf2F90E"; //Goerli
 
 export default function BuyForm(){
   const [store, dispatch] = useContext(StoreContext);
@@ -144,18 +144,18 @@ export default function BuyForm(){
         <p> Balance: {toEther(tokenBalance)} DAIs</p>        
         <p className="p-buyForm"> Axon price: {axonPrice} dais</p>          
         <form>          
-          <input type="number" disabled={toEther(tokenBalance) < axonPrice}  onChange={handleChange} id="message" placeholder="Cant of Axon" className="inputForm"/>
+          <input type="number" disabled={parseInt(toEther(tokenBalance)) < parseInt(axonPrice)}  onChange={handleChange} id="message" placeholder="Cant of Axon" className="inputForm"/>
           <input 
             type="text"  
             disabled="true" 
             placeholder="cost in dai" 
             value={'Cost: '+daiCost + " dais"} 
-            className={(toEther(tokenBalance) < axonPrice ? "inputForm" : "inputForm2")}/>
+            className={(parseInt(toEther(tokenBalance)) < parseInt(axonPrice) ? "inputForm" : "inputForm2")}/>
           <button 
             type="button" 
-            disabled={toEther(tokenBalance) < axonPrice} 
+            disabled={parseInt(toEther(tokenBalance)) < parseInt(axonPrice)} 
             onClick={aproveAndBuy} 
-            className={(toEther(tokenBalance) < axonPrice ? "buyFormButton" : "buyFormButtonPointer")}
+            className={(parseInt(toEther(tokenBalance)) < parseInt(axonPrice) ? "buyFormButton" : "buyFormButtonPointer")}
           >
             BUY 
           </button>
