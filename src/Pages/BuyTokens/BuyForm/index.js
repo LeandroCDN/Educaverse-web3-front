@@ -11,10 +11,10 @@ import swal from 'sweetalert';
 var Web3 = require('web3');
 
 const dai = "0x47e3d6A52293ecF9158a06C2499A17BeC58aFAeD"; //Goerli main
-// const axon = "0xE9e78a448a67d913A8f8d2A8627f26Ece4093c34"; //Goerli main
-// const axonSale = "0xD6Eb81a7235FEB620F60BC4508E80Fa0edf2F90E"; //Goerli main
-const axon = "0x7c453f2Bf6A3A95687a07B6404a89CACd594936E"; //Goerli mio
-const axonSale = "0x60AD202a0Edc3133c9B4c0c4406CabF05578BB81"; //Goerli mio
+const axon = "0xE9e78a448a67d913A8f8d2A8627f26Ece4093c34"; //Goerli main
+const axonSale = "0xD6Eb81a7235FEB620F60BC4508E80Fa0edf2F90E"; //Goerli main
+// const axon = "0x7c453f2Bf6A3A95687a07B6404a89CACd594936E"; //Goerli mio
+// const axonSale = "0x60AD202a0Edc3133c9B4c0c4406CabF05578BB81"; //Goerli mio
 
 export default function BuyForm(){
   const [store, dispatch] = useContext(StoreContext);
