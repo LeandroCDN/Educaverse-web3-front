@@ -43,7 +43,7 @@ export default function BuyForm(){
       })
       return true;
     }    
-    console.log("hola")
+    
     return false;
   } 
   
@@ -144,7 +144,7 @@ export default function BuyForm(){
         <p> Balance: {toEther(tokenBalance)} DAIs</p>        
         <p className="p-buyForm"> Axon price: {axonPrice} dais</p>          
         <form>          
-          <input type="number" disabled={parseInt(toEther(tokenBalance)) < parseInt(axonPrice)}  onChange={handleChange} id="message" placeholder="Cant of Axon" className="inputForm"/>
+          <input type="number" disabled={toEther(tokenBalance) < axonPrice}  onChange={handleChange} id="message" placeholder="Cant of Axon" className="inputForm"/>
           <input 
             type="text"  
             disabled="true" 
@@ -153,15 +153,15 @@ export default function BuyForm(){
             className={(parseInt(toEther(tokenBalance)) < parseInt(axonPrice) ? "inputForm" : "inputForm2")}/>
           <button 
             type="button" 
-            disabled={parseInt(toEther(tokenBalance)) < parseInt(axonPrice)} 
+            disabled={toEther(tokenBalance) < axonPrice} 
             onClick={aproveAndBuy} 
-            className={(parseInt(toEther(tokenBalance)) < parseInt(axonPrice) ? "buyFormButton" : "buyFormButtonPointer")}
+            className={(toEther(tokenBalance) <axonPrice ? "buyFormButton" : "buyFormButtonPointer")}
           >
             BUY 
           </button>
         </form>
         </>
-      : <p> No hay tokens a la venta</p>
+      : <p> There are no tokens for sale</p>
       }
       </div>
      : <p> Please conect your wallet first </p>

@@ -12,9 +12,9 @@ export default function Buytokens() {
         <div className="buyBox">
           <h1 className="h1Form">AXON - ICO</h1>
           <p className="pbuyForm">
-            Educaverse está abriendo su whitelist para el lanzamiento de AXON Token,
+            Educaverse is opening its whitelist for the launch of AXON Token,
             <br/>
-            el token oficial de Educaverse creado para potenciar la experiencia del metaverso educativo. 
+            created to enhance the experience of the educational metaverse. 
           </p>
           <div className="ContextFormBox">         
             <BuyForm/>        
