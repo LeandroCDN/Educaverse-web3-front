@@ -69,8 +69,7 @@ const ConectButton = () => {
     }
   };
 
-  const networkChanged = (chainId) => {
-    console.log( chainId.toString() );
+  const networkChanged = (chainId) => {    
     if(!(chainId.toString() === '0x5')){
       handleNetworkSwitch("goerli"); 
       swal("Please select correct network");

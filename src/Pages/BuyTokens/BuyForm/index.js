@@ -10,9 +10,11 @@ import swal from 'sweetalert';
 
 var Web3 = require('web3');
 
-const dai = "0x47e3d6A52293ecF9158a06C2499A17BeC58aFAeD"; //Goerli
-const axon = "0xE9e78a448a67d913A8f8d2A8627f26Ece4093c34"; //Goerli
-const axonSale = "0xD6Eb81a7235FEB620F60BC4508E80Fa0edf2F90E"; //Goerli
+const dai = "0x47e3d6A52293ecF9158a06C2499A17BeC58aFAeD"; //Goerli main
+// const axon = "0xE9e78a448a67d913A8f8d2A8627f26Ece4093c34"; //Goerli main
+// const axonSale = "0xD6Eb81a7235FEB620F60BC4508E80Fa0edf2F90E"; //Goerli main
+const axon = "0x7c453f2Bf6A3A95687a07B6404a89CACd594936E"; //Goerli mio
+const axonSale = "0x60AD202a0Edc3133c9B4c0c4406CabF05578BB81"; //Goerli mio
 
 export default function BuyForm(){
   const [store, dispatch] = useContext(StoreContext);
@@ -22,15 +24,14 @@ export default function BuyForm(){
   const [tokenBalance, settokenBalance] = useState("");
   const [axonPrice, setaxonPrice] = useState("");
   const [daiCost, setdaiCost] = useState("");
-  const [canBuybool, setcanbuybool] = useState(false);  
+  const [canBuybool, setcanbuybool] = useState(false);
+  const [buyText, setbuyText]  = useState("BUY")
  
   
   let daiContract = "";
   let axonContract = "";
   let axonSaleContract = "";
   
-
-  // console.log(daiContract.methods);
   const ethEnabled = async () => {
     if (window.ethereum) {
       const accounts = await window.ethereum.request({method: 'eth_requestAccounts'});
@@ -66,20 +67,25 @@ export default function BuyForm(){
   }
 
   async function aproveAndBuy() {
-    console.log(daiContract.methods);
     const cantOfAxon = (daiCost.toString() / axonPrice.toString());
     const cantOfAxonInWei = Web3.utils.toWei(cantOfAxon.toString(), 'ether');
     await initContracts();
     const alloawance = await daiContract.methods.allowance(walletAddress, axonSale).call();
    
     if(alloawance.toString()<"10000000000"){
-      approve().then(()=> {buy(cantOfAxonInWei).then(() => {getTokenBalance()})});
+      setbuyText('APPROVING...')
+      await approve().then(()=> {setbuyText('BUYING...')})
+      await buy(cantOfAxonInWei).then(() => {getTokenBalance()});
     }else{
-      buy(cantOfAxonInWei).then(() => {getTokenBalance()});
+      buy(cantOfAxonInWei).then(() => {
+        getTokenBalance();
+        setbuyText("BUY");
+      });
     }
   }
 
   async function approve(){
+    // setbuyText('BUYING...')
     await daiContract.methods.approve(axonSale, "5000000000000000000000000000000").send({from: walletAddress })
   }
 
@@ -102,7 +108,6 @@ export default function BuyForm(){
   async function canBuy(){
     // await initContracts();
     let canBuy = await axonSaleContract.methods.canBuy().call();
-    console.log(canBuy);
     setcanbuybool(canBuy);
   }
 
@@ -133,8 +138,7 @@ export default function BuyForm(){
   if(tokenBalance == ""){
     ethEnabled().then( res=> {canBuy().then( res=> {getTokenBalance()})});
   }
-  // console.log('hola');
-  
+
   return(
     <>
     {walletAddress != ""
@@ -157,7 +161,7 @@ export default function BuyForm(){
             onClick={aproveAndBuy} 
             className={(toEther(tokenBalance) <axonPrice ? "buyFormButton" : "buyFormButtonPointer")}
           >
-            BUY 
+            {buyText} 
           </button>
         </form>
         </>
